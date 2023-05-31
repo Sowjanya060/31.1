@@ -1,0 +1,29 @@
+#include<stdio.h>
+main()
+{
+	int arr[]={1,2,3,4,5,6,7,8,9,10,11};
+	int len=sizeof(arr)/sizeof(int);
+	int i,n,sind,eind,mid;
+	void search(int[],int);
+	scanf("%d",&n);
+	search(arr,n);
+	sind=0;
+	eind=len-1;
+}
+void search(int arr[],int n)
+{
+	int sind,eind,mid;
+	while(sind<=eind)
+	{
+		mid=(sind+eind)/2;
+		if(arr[mid]==n)
+		{
+			printf("\nLoc=%d\n",mid);
+			break;
+		}
+		if(arr[mid]>n)
+		eind=mid-1;
+		else
+		sind=mid+1;
+	}
+}
